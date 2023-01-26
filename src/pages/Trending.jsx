@@ -52,9 +52,8 @@ function Trending() {
               </li>
               <li
               onClick={() => {
-                setPage(1)
                 setTime('day')
-                setTimeout(() => setLoad(false), 1000)
+                setLoad(true)
               }}
               >
                 Day     
@@ -63,7 +62,6 @@ function Trending() {
               onClick={() => {
                 setTime('week')
                 setLoad(true)
-                setTimeout(() => setLoad(false), 1000)
               }}
               >
                 Week
