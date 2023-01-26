@@ -78,16 +78,6 @@ function Homepage() {
         </div>
       </div>
     </div>
-    <footer>
-      <div className='nama'>
-        <p>Rizz Movie</p>
-      </div>
-      <div className='icon'>
-        <img src={Ig} />
-        <img src={Lk} />
-        <img src={Fb} />
-      </div>
-    </footer>
    </>
   )
 }
