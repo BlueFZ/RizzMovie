@@ -10,7 +10,7 @@ function MovieList() {
 
   function getSearched(value) {
    
-    if (value.length > 3) {
+    if (value.length >= 3) {
       axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&&api_key=9e89dc1810e00461d6f59011e04175ed`).then((filter) => {
       setList(filter.data.results)
       })

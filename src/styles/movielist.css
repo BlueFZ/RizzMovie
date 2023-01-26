@@ -128,6 +128,8 @@ span {font-weight: 500;}
 .search-box .search {
   z-index: 9;
   position: fixed;
+  color: var(--txt);
+  font-weight: bold;
   top: 11%;
   border: 2px solid var(--section-head);
   border-radius: 5px;
@@ -136,5 +138,5 @@ span {font-weight: 500;}
 
 ::placeholder {
   color: var(--txt);
-  font-weight: bold;
+  font-weight: 500;
 }

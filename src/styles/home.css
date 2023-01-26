@@ -1,5 +1,7 @@
 body {
   max-width: 100vw;
+  background: url(../../public/bg.png) no-repeat top right;
+  background-size: 50%;
 }
 
 .judul-container {
