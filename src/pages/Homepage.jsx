@@ -22,7 +22,7 @@ function Homepage() {
         <a href="#list">
           <button>
             Our Lists
-            <img src={Arrow}/>
+            {/* <img src={Arrow}/> */}
           </button>
         </a>
       </div>
