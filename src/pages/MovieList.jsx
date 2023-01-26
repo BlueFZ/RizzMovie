@@ -8,11 +8,19 @@ function MovieList() {
   const [page, setPage]= useState(1)
   const [load, setLoad]= useState(true)
 
+  function getSearched(value) {
+   
+    if (value.length > 3) {
+      axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&&api_key=9e89dc1810e00461d6f59011e04175ed`).then((filter) => {
+      setList(filter.data.results)
+      })
+    }
+  }
+
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      setList(movies.data.results)
       setTimeout(() => setLoad(false), 1000)
-      console.log(movies.data.results)
+      setList(movies.data.results)
     })
   }, [page])
   return (
@@ -43,7 +51,6 @@ function MovieList() {
               onClick={() => {
                 setPage(1)
                 setLoad(true)
-                setTimeout(() => setLoad(false), 1000)
               }}
               >
                 Page 1              
@@ -52,7 +59,6 @@ function MovieList() {
               onClick={() => {
                 setPage(2)
                 setLoad(true)
-                setTimeout(() => setLoad(false), 1000)
               }}
               >
                 Page 2
@@ -61,13 +67,19 @@ function MovieList() {
               onClick={() => {
                 setPage(3)
                 setLoad(true)
-                setTimeout(() => setLoad(false), 1000)
               }}
               >
                 Page 3
               </li>
             </ul>
           </nav>
+          <div className='search-box'>
+            <input 
+              className='search'
+              placeholder='Search show...'
+              onChange={(input) => getSearched(input.target.value)}
+            />
+          </div>
           <h1>Movie Lists</h1>
           <div className="card-container">
             {
