@@ -68,7 +68,7 @@ function Trending() {
               </li>
             </ul>
           </nav>
-          <h1>Movie Lists</h1>
+          <h1>Trending Shows</h1>
           <div className="card-container">
             {
               list.map((show) => {
