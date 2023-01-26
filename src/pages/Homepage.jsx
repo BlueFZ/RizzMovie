@@ -5,9 +5,6 @@ import Anim from '../../public/animate.png'
 import Movie from '../../public/movie.png'
 import Tv from '../../public/tv.png'
 import Trend from '../../public/trend.png'
-import Ig from '../../public/instagram.svg'
-import Lk from '../../public/linkedin.svg'
-import Fb from '../../public/facebook.svg'
 import { Link } from 'react-router-dom'
 
 function Homepage() {
