@@ -99,3 +99,7 @@ h1 {
 .thumbnail {
   margin-bottom: 2em;
 }
+
+p {
+  text-align: justify;
+}
