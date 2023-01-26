@@ -71,8 +71,11 @@ function MovieList() {
               list.map((movie) => {
                 return (
                  <div className='card'>
-                  <h3 className='judul-card'>{movie.title}</h3>
                   <img className='thumbnail' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                  <p className='info'>
+                    <span>⭐ {movie.vote_average}</span> <span>📅 {movie.release_date}</span> <span>👁️ {movie.popularity}</span>
+                  </p>
+                  <h3 className='judul-card'>{movie.title}</h3>
                   <p className='card-txt'>{movie.overview}</p>
                  </div>
                 )
