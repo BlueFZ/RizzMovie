@@ -63,8 +63,14 @@ ul {
   display: flex;
   list-style: none;
   justify-content: center;
-  gap: 1em;
+  flex-wrap: wrap;
+  gap: 2em;
   margin-bottom: 4em;
+  background-image: linear-gradient(to bottom right, var(--heading), var(--section-head));
+  color: white;
+  padding: .7em 1em;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.22);
 }
 
 .content {
@@ -74,12 +80,7 @@ ul {
 ul li {
   flex-shrink: 1;
   z-index: 8;
-  background-image: linear-gradient(to bottom right, var(--heading), var(--section-head));
-  color: white;
-  padding: .7em 1em;
-  border-radius: 20px;
   font-weight: 600;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.22);
   cursor: pointer;
   min-width: fit-content;
 }
@@ -101,6 +102,7 @@ h1 {
 }
 
 .card .card-txt {
+  display: inline;
   color: var(--txt);
   font-size: 15px;
   font-weight: bold;
@@ -111,7 +113,7 @@ h1 {
 .card .info {
   display: flex;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   position: relative;
   left: 50%;

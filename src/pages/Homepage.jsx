@@ -55,7 +55,7 @@ function Homepage() {
             Here we Provide you with our tv show lists based on our data base. Click the button below to check out our tv show lists.
           </p>
           <div className="btn-movie-container">
-            <Link to='/movie'>
+            <Link to='/tv'>
               <button className='btn-movie'>
                 <p className='btn-txt'>TV Show Lists</p>
               </button>
@@ -69,7 +69,7 @@ function Homepage() {
             Here we Provide you with our trending shows based on our data base. Click the button below to check out our trending shows.
           </p>
           <div className="btn-movie-container">
-            <Link to='/movie'>
+            <Link to='/trend'>
               <button className='btn-movie'>
                 <p className='btn-txt'>Trending Shows</p>
               </button>
