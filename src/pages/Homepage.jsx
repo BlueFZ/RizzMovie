@@ -5,6 +5,9 @@ import Anim from '../../public/animate.png'
 import Movie from '../../public/movie.png'
 import Tv from '../../public/tv.png'
 import Trend from '../../public/trend.png'
+import Ig from '../../public/instagram.svg'
+import Lk from '../../public/linkedin.svg'
+import Fb from '../../public/facebook.svg'
 import { Link } from 'react-router-dom'
 
 function Homepage() {
@@ -36,7 +39,7 @@ function Homepage() {
       <div className="card-container">
         <div className="card">
           <h3>Movies</h3>
-          <img src={Movie} alt="" />
+          <img src={Movie}/>
           <p className='card-desc'>
             Here we Provide you with our movie lists based on our data base. Cli ck the button below to check out our movie lists.
           </p>
@@ -50,7 +53,7 @@ function Homepage() {
         </div>
         <div className="card">
           <h3>TV Shows</h3>
-          <img src={Tv} alt="" />
+          <img src={Tv} />
           <p className=''>
             Here we Provide you with our tv show lists based on our data base. Click the button below to check out our tv show lists.
           </p>
@@ -64,7 +67,7 @@ function Homepage() {
         </div>
         <div className="card">
           <h3>Trending</h3>
-          <img src={Trend} alt="" />
+          <img src={Trend} />
           <p className=''>
             Here we Provide you with our trending shows based on our data base. Click the button below to check out our trending shows.
           </p>
@@ -78,6 +81,16 @@ function Homepage() {
         </div>
       </div>
     </div>
+    <footer>
+      <div className='nama'>
+        <p>Rizz Movie</p>
+      </div>
+      <div className='icon'>
+        <img src={Ig} />
+        <img src={Lk} />
+        <img src={Fb} />
+      </div>
+    </footer>
    </>
   )
 }
