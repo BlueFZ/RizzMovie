@@ -24,6 +24,7 @@ body {
   color: var(--txt);
   font-weight: bold;
   font-size: 1em;
+  text-align: justify;
 }
 
 .btn-container {
@@ -128,6 +129,7 @@ h2 {
   font-size: 15px;
   font-weight: bold;
   max-width: 300px;
+  text-align: justify;
 }
 
 .txt-desc {
