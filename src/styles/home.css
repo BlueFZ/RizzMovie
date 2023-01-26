@@ -127,8 +127,7 @@ h2 {
   color: var(--txt);
   font-size: 15px;
   font-weight: bold;
-  min-width: 300px;
-  max-width: 500px;
+  max-width: 300px;
 }
 
 .txt-desc {

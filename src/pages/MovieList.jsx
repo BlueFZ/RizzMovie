@@ -73,7 +73,7 @@ function MovieList() {
                  <div className='card'>
                   <h3 className='judul-card'>{movie.title}</h3>
                   <img className='thumbnail' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
-                  <p>{movie.overview}</p>
+                  <p className='card-txt'>{movie.overview}</p>
                  </div>
                 )
               })
