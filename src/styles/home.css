@@ -7,6 +7,7 @@ body {
 .judul-container {
   display: flex;
   flex-direction: column;
+  padding: 16px;
 }
 
 .judul {
@@ -89,6 +90,7 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2em;
+  padding: 16px;
 }
 
 h2 {
@@ -159,6 +161,43 @@ h2 {
   font-weight: bold;
 }
 
+footer {
+  margin-top: .8em;
+  display: flex;
+  max-width: 100%;
+  background-image: linear-gradient(to right, var(--heading), var(--section-head));
+  align-items: center;
+  padding: 0 .5em;
+  border-radius: 15px 15px 0px 0px;
+  gap: 8em;
+}
+
+.brand {
+  display: flex;
+  gap: .3em;
+}
+
+.brand p {
+  position: relative;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 1.2em;
+}
+
+.brand img {
+  max-width: 25px;
+}
+
+.kontak {
+  display: flex;
+  gap: 10px;
+}
+
+.kontak img {
+  max-width: 24px;
+}
+
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -197,6 +236,23 @@ h2 {
 
   .pict {
     min-width: 250px;
+  }
+
+  footer {
+    justify-content: center ;
+    gap: 68em;
+  }
+
+  .brand img {
+    min-width: 25px;
+  }
+
+  .kontak a img {
+    min-width: 25px;
+  }
+
+  .kontak {
+    margin-top: 10px;
   }
 }
 

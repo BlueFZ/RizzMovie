@@ -1,32 +1,34 @@
 import React from 'react'
 import '../styles/home.css'
-import Arrow from '../../public/arrow.png'
+import Logo from '../../public/logo.svg'
 import Anim from '../../public/animate.png'
 import Movie from '../../public/movie.png'
 import Tv from '../../public/tv.png'
 import Trend from '../../public/trend.png'
+import Ig from '../../public/instagram.svg'
+import Git from '../../public/github.svg'
+import Lk from '../../public/linkedin.svg'
 import { Link } from 'react-router-dom'
 
 function Homepage() {
   return (
    <>
     <div className="judul-container">
-    <div className='judul'>
-      <h1>
-      Rizz Movies and TV Shows
-      </h1>
-      <p className='judul-txt'>
-        This website will privide you with the lists of Movies and TV Shows you've ever heard. So you'll be able to view a whole bunch of our lists. Feel free to explore to your heart content
-      </p>
-      <div className='btn-container'>
-        <a href="#list">
-          <button>
-            Our Lists
-            {/* <img src={Arrow}/> */}
-          </button>
-        </a>
+      <div className='judul'>
+        <h1>
+        Rizz Movies and TV Shows
+        </h1>
+        <p className='judul-txt'>
+          This website will privide you with the lists of Movies and TV Shows you've ever heard. So you'll be able to view a whole bunch of our lists. Feel free to explore to your heart content
+        </p>
+        <div className='btn-container'>
+          <a href="#list">
+            <button>
+              Our Lists
+            </button>
+          </a>
+        </div>
       </div>
-    </div>
     <div className='anim'>
       <img src={Anim} className='pict' />
     </div>
@@ -78,6 +80,17 @@ function Homepage() {
         </div>
       </div>
     </div>
+    <footer>
+      <div className="brand">
+        <img src={Logo} alt="" />
+        <p>Rizz Movie List</p>
+      </div>
+      <div className="kontak">
+        <a target='_blank' href="https://www.instagram.com/syafi_islam/"><img src={Ig}  /></a>
+        <a target='_blank' href="https://github.com/BlueFZ/"><img src={Git} /></a>
+        <a target='_blank' href="https://www.linkedin.com/in/muhammad-syafi-513588241/"><img src={Lk} /></a>
+      </div>
+    </footer>
    </>
   )
 }

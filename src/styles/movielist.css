@@ -98,6 +98,7 @@ h1 {
 
 .thumbnail {
   margin-bottom: 2em;
+  border-radius: 25px;
 }
 
 .card .card-txt {
