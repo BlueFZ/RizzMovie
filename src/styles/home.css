@@ -52,6 +52,13 @@ body {
   font-size: 16px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.22);
   cursor: pointer;
+  transition: .35s;
+}
+
+.btn-container button:hover {
+  transform: translateY(-5px);
+  background-color: #373a94;
+  color: rgb(217, 217, 217);
 }
 
 .btn-container a {
@@ -149,6 +156,11 @@ h2 {
   justify-content: center;
 }
 
+.txt-movie-container {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-movie {
   background-image: linear-gradient(to bottom right, var(--heading), var(--section-head));
   border: none;
@@ -156,6 +168,13 @@ h2 {
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.22);
   cursor: pointer;
+  transition: .35s;
+}
+
+.btn-movie:hover {
+  transform: translateY(-5px);
+  color: rgb(217, 217, 217);
+  background-image: linear-gradient(to bottom right, #373a94, #016aab);
 }
 
 .btn-movie .btn-txt {
@@ -229,6 +248,10 @@ footer {
 
   .judul-txt {
     max-width: 500px;
+  }
+
+  .card {
+    width: 500px;
   }
 
   .card p {

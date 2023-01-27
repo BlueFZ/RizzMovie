@@ -3,16 +3,35 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/movielist.css'
 import Magnify from '../../public/search.svg'
+import Ig from '../../public/instagram.svg'
+import Git from '../../public/github.svg'
+import Lk from '../../public/linkedin.svg'
+import Logo from '../../public/logo.svg'
 
 function MovieList() {
   const [list, setList]= useState([])
   const [page, setPage]= useState(1)
   const [expand, setExpand]= useState(0)
+  const [clicked, setClicked]= useState(false)
+  const [detail, setDetail]= useState('Show more')
   const [load, setLoad]= useState(true)
+
+  function getExpanded(id) {
+
+    if(clicked === true) {
+      setClicked(false)
+      setExpand(0)
+      // if(id == expand) setDetail('Show more')
+    }
+    else {
+      setClicked(true)
+      setExpand(id)
+      // if (expand == 0) setDetail('Show less')
+    }
+  }
 
   function getData() {
     axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      console.log(movies.data.results)
       setTimeout(() => setLoad(false), 1000)
       setList(movies.data.results)
     })
@@ -23,17 +42,12 @@ function MovieList() {
     if (value !== '') {
       axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&&api_key=9e89dc1810e00461d6f59011e04175ed`).then((filter) => {
       setList(filter.data.results)
-      console.log(filter.data.results)
       })
     }
     else if (value.length === 0) {
       getData()
     }
   }
-
-  useEffect(() => {
-    console.log(expand)
-  },[expand])
 
   useEffect(() => {
     getData()
@@ -99,30 +113,49 @@ function MovieList() {
           <div className="card-container">
             {
               list.map((movie) => {
+
+                if (movie.poster_path === null || movie.overview === '') {
+                  return
+                }
                 return (
+                  
                  <div className='card'>
                   <img className='thumbnail' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                   <p className='info'>
                       <span>⭐ {movie.vote_average}</span> <span>📅 {movie.release_date}</span> <span>👁️ {movie.popularity}</span>
                   </p>
                   <h3 className='judul-card'>{movie.title}</h3>
-                  <button
-                  onClick={() => {
-                    setExpand(movie.id)
-                  }}
-                  >expand</button>
-                  {
-                    expand === movie.id &&
-                    (
-                      <p className='card-txt'>{movie.overview}</p>
-                    )
-                  }
+                  <div className="expand-container">
+                    <button
+                    className='btn-expand'
+                    onClick={() => {
+                      getExpanded(movie.id)
+                    }}
+                    >{detail}</button>
+                    {
+                      expand === movie.id &&
+                      (
+                        <p className='card-txt'>{movie.overview}</p>
+                      )
+                    }
+                  </div>
                  </div>
                 )
               })
             }
             </div>
         </div>
+        <footer>
+          <div className="brand">
+            <img src={Logo} alt="" />
+            <p>Rizz Movie List</p>
+          </div>
+          <div className="kontak">
+            <a target='_blank' href="https://www.instagram.com/syafi_islam/"><img src={Ig}  /></a>
+            <a target='_blank' href="https://github.com/BlueFZ/"><img src={Git} /></a>
+            <a target='_blank' href="https://www.linkedin.com/in/muhammad-syafi-513588241/"><img src={Lk} /></a>
+          </div>
+        </footer>
       </>
     )}
    </>

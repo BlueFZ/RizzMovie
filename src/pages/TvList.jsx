@@ -40,10 +40,10 @@ function Trending() {
   }
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/trending/all/${time}?api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      setList(movies.data.results)
+    axios.get(`https://api.themoviedb.org/3/tv/1?api_key=9e89dc1810e00461d6f59011e04175ed&language=en-US`).then((movies) => {
+      setList(movies.data)
       setTimeout(() => setLoad(false), 1000)
-      console.log(movies.data.results)
+      console.log(movies.data)
     })
   }, [time])
 
@@ -94,27 +94,7 @@ function Trending() {
             {
               list.map((show) => {
                 return (
-                 <div className='card'>
-                  <img className='thumbnail' src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt="" />
-                  <p className='info'>
-                      <span>⭐ {(show.vote_average).toFixed(1)}</span> <span>📅 {getRelease(show)}</span> <span>👁️ {show.popularity}</span>
-                  </p>
-                  <h3 className='judul-card'>{getType(show)}</h3>
-                  <div className="expand-container">
-                    <button
-                    className='btn-expand'
-                    onClick={() => {
-                      getExpanded(show.id)
-                    }}
-                    >{detail}</button>
-                    {
-                      expand === show.id &&
-                      (
-                        <p className='card-txt'>{show.overview}</p>
-                      )
-                    }
-                  </div>
-                 </div>
+                 console.log(show.name)
                 )
               })
             }
