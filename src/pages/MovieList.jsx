@@ -2,26 +2,41 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/movielist.css'
+import Magnify from '../../public/search.svg'
 
 function MovieList() {
   const [list, setList]= useState([])
   const [page, setPage]= useState(1)
+  const [expand, setExpand]= useState(0)
   const [load, setLoad]= useState(true)
+
+  function getData() {
+    axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
+      console.log(movies.data.results)
+      setTimeout(() => setLoad(false), 1000)
+      setList(movies.data.results)
+    })
+  }
 
   function getSearched(value) {
    
-    if (value.length >= 3) {
+    if (value !== '') {
       axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&&api_key=9e89dc1810e00461d6f59011e04175ed`).then((filter) => {
       setList(filter.data.results)
+      console.log(filter.data.results)
       })
+    }
+    else if (value.length === 0) {
+      getData()
     }
   }
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      setTimeout(() => setLoad(false), 1000)
-      setList(movies.data.results)
-    })
+    console.log(expand)
+  },[expand])
+
+  useEffect(() => {
+    getData()
   }, [page])
   return (
    <>
@@ -74,9 +89,9 @@ function MovieList() {
             </ul>
           </nav>
           <div className='search-box'>
+            <img src={Magnify} alt="" />
             <input 
               className='search'
-              placeholder='Search show...'
               onChange={(input) => getSearched(input.target.value)}
             />
           </div>
@@ -91,7 +106,17 @@ function MovieList() {
                       <span>⭐ {movie.vote_average}</span> <span>📅 {movie.release_date}</span> <span>👁️ {movie.popularity}</span>
                   </p>
                   <h3 className='judul-card'>{movie.title}</h3>
-                  <p className='card-txt'>{movie.overview}</p>
+                  <button
+                  onClick={() => {
+                    setExpand(movie.id)
+                  }}
+                  >expand</button>
+                  {
+                    expand === movie.id &&
+                    (
+                      <p className='card-txt'>{movie.overview}</p>
+                    )
+                  }
                  </div>
                 )
               })

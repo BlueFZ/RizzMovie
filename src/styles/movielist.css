@@ -125,20 +125,24 @@ span {font-weight: 500;}
 .search-box {
   display: flex;
   justify-content: center;
+  z-index: 9;
+  position: fixed;
+  top: 11%;
+  left: 49%;
+  transform: translate(-49%);
 }
 
 .search-box .search {
-  z-index: 9;
-  position: fixed;
-  color: var(--txt);
+  color: black;
   font-weight: bold;
-  top: 11%;
   border: 2px solid var(--section-head);
-  border-radius: 5px;
-  padding: .3em .5em;
+  border-radius: 20px;
+  padding: .4em .5em .4em 2em;
+  max-width: 500px;
 }
 
-::placeholder {
-  color: var(--txt);
-  font-weight: 500;
+.search-box img {
+  z-index: 10;
+  position: relative;
+  left: 12%;
 }
