@@ -54,22 +54,6 @@ function Homepage() {
             </div>
           </div>
           <div className="card">
-            <h3>TV Shows</h3>
-            <img src={Tv} />
-            <div className='txt-movie-container'>
-              <p className='card-desc'>
-                Here we Provide you with our movie lists based on our data base. Cli ck the button below to check out our movie lists.
-              </p>
-            </div>
-            <div className="btn-movie-container">
-              <Link to='/tv'>
-                <button className='btn-movie'>
-                  <p className='btn-txt'>TV Show Lists</p>
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div className="card">
             <h3>Trending</h3>
             <img src={Trend} />
             <div className='txt-movie-container'>
